@@ -1,0 +1,115 @@
+*body{background-color:#00f;color:#fff}*/
+
+body{
+	background-image: url("https://www.w3schools.com/css/img_5terre.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h1{color:#ff0}#bigheader{color:green}.yezid{color:purple}
+
+.box-model{
+	margin: 20px;
+	border: 2px solid blue;
+	padding: 5px;
+	letter-spacing: 2px;
+}
+.form-control{
+	padding: 20px;
+	letter-spacing: 2px;
+	font-size: 20px;
+	margin-left: 30px;
+}
+
+.form-control:focus{
+  background-color: yellow;
+  border: 2px solid green;
+}
+.students{
+   list-style-type:upper-roman;
+}
+.link-tag{
+  text-decoration: none;
+  color: black;
+}
+.link-tag:hover{
+	color: blue;
+}
+.link-tag:active{
+ color: green;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  border-right: 2px solid #fff;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover,.active {	
+  background-color: green;
+  color: #000;
+}
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+
+
+
+ 
+<?php
+
+
+ $profile = Profile::getProfileByPhone($user_phone_no);
+            $accountName = $getBankDetails['AccountName'];
+            $names = explode(" ", $accountName);
+            var_dump("names", $accountName,'names exploded');
+            if(empty($profile->firstname) && $names[1]) $profile->firstname = str_replace(",", "", $names[1]);
+
+            if(empty($profile->lastname) && $names[0]) $profile->lastname = str_replace(",", "", $names[0]);
+            if($profile->save(false)) {
+                var_dump("profile updated");
+            }
+
+
+
+
+?>
+
+
+
+
+
